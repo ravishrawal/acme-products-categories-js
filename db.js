@@ -13,16 +13,16 @@ var createProduct = function(name,category) {
   data[category].push(new Product(name,data[category].length));
 }
 
-var deleteProduct = function(name, category) {
+var deleteProduct = function(id, category) {
   var tempArr=data[category];
   tempArr.forEach(function(arg) {
-    if(arg.name === name){tempArr.splice(tempArr.indexOf(arg),1)}
+    if(arg.id === id){tempArr.splice(tempArr.indexOf(arg),1)}
   })
 }
 
 var deleteCategory = function(name) {
   delete data[name];
-} 
+}
 
 var getCategoryNames = function() {
   return Object.keys(data);

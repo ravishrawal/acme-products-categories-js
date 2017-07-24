@@ -14,8 +14,8 @@
       </ul>
 
       <div class = 'form-group'>
-        <form action = '/categories/{{ catName }}/products' method='POST'>
-          <input class = 'form-control' placeholder="Product Name">
+        <form action = '/categories/{{ nav }}/products' method='POST'>
+          <input class = 'form-control' name = 'productName' placeholder="Product Name">
           <button class = 'btn btn-primary'>Save</button>
         </form>
       </div>
@@ -25,15 +25,15 @@
         <div>
           <li class = 'list-group-item'>
             {{product.name}}
-          <form action= '/categories/{{ catName }}/products/{{ product.id }}?_method=DELETE' method='POST'>
-            <button class = 'btn btn-warning'>Delete</button>
+          <form action= '/categories/{{ nav }}/products/{{ product.id }}?_method=DELETE' method='POST'>
+            <button class = 'btn btn-warning' name='product'>Delete</button>
           </form>
           </li>
         </div>
         {% endfor %}
       </ul>
 
-      <form action= '/categories/{{ catName }}?_method=DELETE' method='POST'>
+      <form action= '/categories/{{ nav }}?_method=DELETE' method='POST'>
         <button class = 'btn btn-danger'>Delete Category</button>
       </form>
 
